@@ -100,7 +100,7 @@ function hantar(nama,status){
 
 var pengawas = document.getElementById("pengawas").value;
 
-fetch("PASTE_URL_APPS_SCRIPT",{
+fetch("https://script.google.com/macros/s/AKfycbxPW1TwdK4i2ILFgpJhVVgiTCAkVsLLNi_cemeLzAdLIL3L5Gyl1xDCshN0eJJzdEvd/exec",{
 method:"POST",
 body:JSON.stringify({
 nama:nama,
