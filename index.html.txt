@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>E-Kehadiran Asrama</title>
+</head>
+
+<body>
+
+<h2>Sistem Kehadiran Asrama</h2>
+
+<input type="text" id="pengawas" placeholder="Nama Pengawas">
+
+<h3>Senarai Pelajar</h3>
+
+<p>Ali 
+<button onclick="hadir('Ali')">Hadir</button>
+<button onclick="tidakhadir('Ali')">Tidak Hadir</button>
+</p>
+
+<p>Abu
+<button onclick="hadir('Abu')">Hadir</button>
+<button onclick="tidakhadir('Abu')">Tidak Hadir</button>
+</p>
+
+<script>
+
+function hadir(nama){
+
+var pengawas = document.getElementById("pengawas").value;
+
+fetch("https://script.google.com/macros/s/AKfycbwIwUm6zk2ncCS1u1tBuJM9RCiCjiV3QsmehTniIV7Ea5JzUlVBfpgDYHiDJ_wK4W0SSw/exec",{
+method:"POST",
+body:JSON.stringify({
+nama:nama,
+status:"Hadir",
+pengawas:pengawas
+})
+})
+
+alert("Kehadiran direkod")
+
+}
+
+function tidakhadir(nama){
+
+var pengawas = document.getElementById("pengawas").value;
+
+fetch("URL_APPS_SCRIPT",{
+method:"POST",
+body:JSON.stringify({
+nama:nama,
+status:"Tidak Hadir",
+pengawas:pengawas
+})
+})
+
+alert("Kehadiran direkod")
+
+}
+
+</script>
+
+</body>
+</html>
